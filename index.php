@@ -16,14 +16,16 @@
     
 
     <?php
-        $string = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, quisquam nostrum. Consequuntur dicta, sint qui dolore quisquam, perspiciatis eaque illo incidunt aliquam harum facere ducimus dolorem aliquid ad officia quae.";
+
+        $string = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, quisquam nostrum. Consequuntur dicta, sint qui dolore quisquam, perspiciatis eaque illo incidunt aliquam harum facere ducimus dolorem aliquid ad officia quae."; 
         echo "<p> Frase completa: ".$string."</p>";
         if(isset($_GET["censured"]))
         {
             $censured = $_GET["censured"];
             $censuredString = str_ireplace($censured, "***", $string);
-            echo "<p> lunghezza completa: ".strlen($string)."</p>"
             echo "<p> Frase censurata: ".$censuredString."</p>";
+            echo "<p> lunghezza completa: ".strlen($string)."</p>";
+            echo "<p> lunghezza frase censurata: ".(strlen($string) - strlen($censured))."</p>";
         }
     ?>
 
